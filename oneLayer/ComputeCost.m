@@ -7,7 +7,7 @@ function J = ComputeCost(X,Y,W,b,lambda)
 P = EvaluateClassifier(X,W,b);
 loss = zeros(1,size(P,2));
 for i=1:size(loss,2)
-loss(1,i) = -log10(Y(:,i)'*P(:,i));
+loss(1,i) = -log2(Y(:,i)'*P(:,i));
 end
 J = mean(loss);%the cross-entropy loss term
 J = J + lambda*sum(W.*W,'all'); %plus regularization term

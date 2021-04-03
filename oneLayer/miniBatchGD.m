@@ -29,7 +29,7 @@ for i = 1:n_epochs
         [grad_W, grad_b] = ComputeGradients(Xbatch, Ybatch,P,iter_W, iter_b, lambda);
         iter_b = iter_b - eta*grad_b;
         iter_W = iter_W - eta*grad_W;
-    end
+    end 
     acc = ComputeAccuracy(X,y,iter_W,iter_b);
     acc_list(i) = acc;
     %print("---------epoch"+num2str(i)+":"+"accuracy = "+num2str(acc)+"----------");
